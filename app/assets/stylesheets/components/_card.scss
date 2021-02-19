@@ -24,7 +24,20 @@
   border-radius: 10px 10px 0px 0px;
 }
 
+.flat-card {
+  box-shadow: 1px 1px 10px lightgrey;
+}
+
 .flat-card.flat-card-description{
   min-height: 400px;
-  background-color: #f8f9fa
+  background-color: #f8f9fa;
+}
+
+.review-card {
+  background-color: #f4f4f4;
+  border-radius: 9px;
+}
+
+.review-card .stars {
+
 }

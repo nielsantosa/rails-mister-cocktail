@@ -2,7 +2,7 @@
   <h1>List of Cocktails</h1>
 
   <% if @query %>
-  <p>List all cocktails that has <strong><%= @query %></strong>. (<%= @cocktails.count %>) </p>
+  <p>Result search for <strong><%= @query %></strong>. (<%= @cocktails.count %>) </p>
   <% else %>
   <p>List all cocktails. (<%= @cocktails.count %>)</p>
   <% end %>
@@ -12,11 +12,31 @@
     <div class="card">
       <img src="https://source.unsplash.com/400x300/?cocktail" class="card-img-top" alt="<%= cocktail.name %>">
       <div class="card-body">
-        <h5 class="card-title"><strong><%= cocktail.name %></strong></h5>
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title"><strong><%= cocktail.name %></strong></h5>
+          <div class="stars">
+            <% average_rating = Review.where(cocktail: cocktail).average(:rating) || 0 %>
+            <% average_rating.floor.times do %>
+            <i class="fas fa-star"></i>
+            <% end %>
+            <% (5-average_rating.floor).times do %>
+            <i class="far fa-star"></i>
+            <% end %>
+          </div>
+        </div>
         <p class="card-text"><%= cocktail.description %></p>
       </div>
-      <div class="card-bottom">
+      <div class="card-bottom d-flex justify-content-between align-items-center">
         <%= link_to "Explore", cocktail_path(cocktail), class: "btn btn-primary" %>
+        <div class="d-flex">
+          <%= link_to edit_cocktail_path(cocktail), class: "text-success mr-1" do%>
+          <i class="fas fa-edit"></i>
+          <% end %>
+          <%= link_to cocktail_path(cocktail), method: "delete", class: "text-warning" do%>
+          <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
+
       </div>
     </div>
     <% end %>
