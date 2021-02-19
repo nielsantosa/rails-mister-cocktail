@@ -1,0 +1,24 @@
+<div class="container my-3">
+  <h1>List of Cocktails</h1>
+
+  <% if @query %>
+  <p>List all cocktails that has <strong><%= @query %></strong>. (<%= @cocktails.count %>) </p>
+  <% else %>
+  <p>List all cocktails. (<%= @cocktails.count %>)</p>
+  <% end %>
+
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?cocktail" class="card-img-top" alt="<%= cocktail.name %>">
+      <div class="card-body">
+        <h5 class="card-title"><strong><%= cocktail.name %></strong></h5>
+        <p class="card-text"><%= cocktail.description %></p>
+      </div>
+      <div class="card-bottom">
+        <%= link_to "Explore", cocktail_path(cocktail), class: "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

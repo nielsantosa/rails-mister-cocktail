@@ -1,0 +1,56 @@
+<%= render "shared/banner" %>
+
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="flat-card bg-light p-4 rounded">
+        <h1><strong><%= @cocktail.name %></strong></h1>
+        <h3><%= @cocktail.description %></h3>
+      </div>
+      <div class="flat-card flat-card-description bg-light p-4 my-3 rounded">
+        <h2>Ingredients :</h2>
+        <ul>
+          <% @cocktail_doses.each do |dose| %>
+          <li class="d-flex justify-content-between">
+            <span><i class="fas fa-circle icon-small"></i> <%= dose.description %> <%= dose.ingredient.name %></span>
+            <span><%= link_to "Remove", dose_path(dose), method: "delete" %></span>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="flat-card flat-card-description bg-light p-4 my-3 rounded">
+        <h2>Reviews :</h2>
+        <ul>
+          <% @cocktail_reviews.each do |review| %>
+          <li class="d-flex justify-content-between">
+            <span><i class="fas fa-circle icon-small"></i> <%= review.content %> - Rating : <%= review.rating %></span>
+            <span><%= link_to "Remove", review_path(review), method: "delete" %></span>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="bg-light p-4 rounded">
+        <h5>Add new ingredient to <%= @cocktail.name %> </h5>
+        <%= simple_form_for [@cocktail, @new_dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient, as: :select %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <div class="bg-light p-4 my-3 rounded">
+        <h5>Add new reviews to <%= @cocktail.name %> </h5>
+        <%= simple_form_for [@cocktail, @new_review] do |f| %>
+        <%= f.input :content %>
+        <%= f.input :rating %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <%= link_to "Back to List", cocktails_path %>
+  </div>
+</div>
