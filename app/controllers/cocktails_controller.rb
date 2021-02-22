@@ -2,6 +2,7 @@ class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
 
+    @try = params[:search]
     if params[:search]
       @query = query_params[:query]
       @cocktails = Cocktail.where("lower(name) LIKE lower(?)", "%#{@query}%")

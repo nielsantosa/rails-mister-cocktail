@@ -1,7 +1,7 @@
-<div class="container my-3">
-  <h1>List of Cocktails </h1>
+<div class="container my-3 min-vw-100">
+  <h1>List of Cocktails</h1>
 
-  <% if @query %>
+  <% if @try %>
   <p>Result search for <strong><%= @query %></strong>. (<%= @cocktails.count %> cocktails)</p>
   <% else %>
   <p>List all cocktails. (<%= @cocktails.count %> cocktails)</p>
