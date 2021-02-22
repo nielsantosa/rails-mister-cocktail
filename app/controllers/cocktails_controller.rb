@@ -6,17 +6,6 @@ class CocktailsController < ApplicationController
       @query = query_params[:query]
       @cocktails = Cocktail.where("lower(name) LIKE lower(?)", "%#{@query}%")
     end
-
-    # Video pexels
-    # pexels_key = "563492ad6f9170000100000138c8f4c57b1c4c69a53d72daaeb561d3" # Your pexels authenticator key
-    # client = Pexels::Client.new(pexels_key) # Set up the client
-
-    # pexels_json_parsed = client.videos.search('waves') # Search for videos with keyword "waves", return you 15 videos
-    # @video_url = pexels_json_parsed.videos[0].files[0].link # Take the first video
-    # @video_type = pexels_json_parsed.videos[0].files[0].file_type
-
-    @video_url = "app/assets/videos/video_test.mp4"
-    @video_type = 'video/mp4'
   end
 
   def show
