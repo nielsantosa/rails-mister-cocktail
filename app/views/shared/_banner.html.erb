@@ -1,4 +1,4 @@
-<div class="banner" style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(
+<div class="banner" style='background-image: url(
 <% if @cocktail.photo.attached? %>
 <%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
 <% else %>

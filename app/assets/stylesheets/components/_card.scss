@@ -45,11 +45,15 @@
   background-color: #f8f9fa;
 }
 
+.flat-card-description li:hover .delete-button {
+  display: inline-block;
+}
+
 .review-card {
   background-color: #f4f4f4;
   border-radius: 9px;
 }
 
-.review-card .stars {
-
+.review-card:hover .delete-button {
+  display: inline-block;
 }
