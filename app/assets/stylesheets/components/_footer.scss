@@ -7,9 +7,19 @@
   padding: 0px 50px;
   color: white;
 }
+
+@media(max-width:768px) {
+  .footer {
+    display: block;
+    text-align: center;
+  }
+}
+
 .footer-links {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px;
 }
 .footer-links a {
   color: white;
