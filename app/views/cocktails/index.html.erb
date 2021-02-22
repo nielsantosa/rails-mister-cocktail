@@ -1,10 +1,17 @@
 <div class="container my-3">
+  <!-- Videos -->
+  <div>
+
+
+  </div>
+
+
   <h1>List of Cocktails</h1>
 
   <% if @query %>
-  <p>Result search for <strong><%= @query %></strong>. (<%= @cocktails.count %>) </p>
+  <p>Result search for <strong><%= @query %></strong>. (<%= @cocktails.count %> cocktails)</p>
   <% else %>
-  <p>List all cocktails. (<%= @cocktails.count %>)</p>
+  <p>List all cocktails. (<%= @cocktails.count %> cocktails)</p>
   <% end %>
 
   <div class="cards">

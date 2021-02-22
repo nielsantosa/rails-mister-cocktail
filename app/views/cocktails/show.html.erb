@@ -5,6 +5,17 @@
     <div class="col-xs-12 col-8">
       <div class="flat-card bg-light p-4 rounded">
         <h1><strong><%= @cocktail.name %></strong></h1>
+        <div class="stars my-2">
+          <% average_rating = Review.where(cocktail: @cocktail).average(:rating) || 0 %>
+          <% review_count = Review.where(cocktail: @cocktail).count || 0 %>
+          <% average_rating.floor.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+          <% (5-average_rating.floor).times do %>
+          <i class="far fa-star"></i>
+          <% end %>
+          (<%= review_count %> reviews)
+        </div>
         <h3><%= @cocktail.description %></h3>
       </div>
       <div class="flat-card flat-card-description bg-light p-4 my-3 rounded">
