@@ -1,24 +1,11 @@
-# README
+# Mister Cocktail
+An assignment from LeWagon Singapore for creating a cocktail databases using Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Features
+- MVC framework using Ruby on Rails
+- Database management using Active Record with PostgreSQL
+- Usage of Cloudinary API for image storage
+- Front-End is done using Bootstrap, CSS, HTML
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Credit
+Credits to LeWagon Singapore for this assignment
