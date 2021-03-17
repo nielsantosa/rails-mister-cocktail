@@ -7,6 +7,7 @@ Link: [https://mister-cocktail-nielsantosa.herokuapp.com/cocktails](https://mist
 - Database management using Active Record with PostgreSQL
 - Usage of Cloudinary API for image storage
 - Front-End is done using Bootstrap, CSS, HTML
+- Deployed on heroku for production
 
 ## Credit
 Credits to LeWagon Singapore for this assignment
