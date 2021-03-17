@@ -1,5 +1,6 @@
 # Mister Cocktail
-An assignment from LeWagon Singapore for creating a cocktail databases using Rails.
+An assignment from LeWagon Singapore for creating a cocktail databases using Rails.<br/>
+Link: [https://mister-cocktail-nielsantosa.herokuapp.com/cocktails](https://mister-cocktail-nielsantosa.herokuapp.com/cocktails)
 
 ## Features
 - MVC framework using Ruby on Rails
